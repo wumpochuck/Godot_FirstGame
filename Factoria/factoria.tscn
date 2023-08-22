@@ -1,0 +1,479 @@
+[gd_scene load_steps=14 format=3 uid="uid://sxaou24rsmrh"]
+
+[ext_resource type="Texture2D" uid="uid://04cnw6bnms4d" path="res://BG/background_middle.png" id="1_2nnt0"]
+[ext_resource type="Script" path="res://Scripts/Factoria.gd" id="1_d0ofb"]
+[ext_resource type="Texture2D" uid="uid://bir2qd7ny67q1" path="res://UI/Button_Resized.png" id="3_qiwyv"]
+[ext_resource type="Texture2D" uid="uid://y7w3vvgghouf" path="res://BG/background_right.png" id="3_wi3im"]
+[ext_resource type="Texture2D" uid="uid://bumotkxbe2exy" path="res://BG/background_left.png" id="4_g8qql"]
+[ext_resource type="Texture2D" uid="uid://cyoyxtyb1pa5o" path="res://UI/Button_Hover_Resized.png" id="4_yuveu"]
+[ext_resource type="Texture2D" uid="uid://bplbme8dpyrp1" path="res://Assets/House128x128.png" id="8_0wmgo"]
+[ext_resource type="Texture2D" uid="uid://jghlqwqulmy8" path="res://UI/DisplayHorizontal.png" id="8_e6esx"]
+[ext_resource type="Texture2D" uid="uid://lpe7kihic85h" path="res://Assets/Завод.png" id="9_bv62e"]
+[ext_resource type="Texture2D" uid="uid://vodll0umnl6g" path="res://Assets/Озеро.png" id="10_hdqdj"]
+[ext_resource type="Script" path="res://Scripts/Shop.gd" id="10_lsgx4"]
+[ext_resource type="Texture2D" uid="uid://b3j5ugpu2yy0t" path="res://Assets/Парк.png" id="11_tgg7h"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="12_8jkf5"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_d0ofb")
+
+[node name="BackgroundMiddle" type="Sprite2D" parent="."]
+position = Vector2(736, 384)
+scale = Vector2(1.02222, 1.06667)
+texture = ExtResource("1_2nnt0")
+
+[node name="Clicker" type="Node2D" parent="."]
+
+[node name="DisplayCoins" type="Sprite2D" parent="Clicker"]
+position = Vector2(237, 494)
+scale = Vector2(0.734043, 0.734043)
+texture = ExtResource("8_e6esx")
+
+[node name="DisplayText" type="Label" parent="Clicker/DisplayCoins"]
+offset_left = -214.0
+offset_top = -63.0
+offset_right = 211.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 30
+text = "Coins: 0
+Coins per click: 0
+Coins per sec: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickerButton" type="TextureButton" parent="Clicker"]
+offset_top = 632.0
+offset_right = 240.0
+offset_bottom = 728.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("3_qiwyv")
+texture_hover = ExtResource("4_yuveu")
+
+[node name="ClickerText" type="Label" parent="Clicker/ClickerButton"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 25
+text = "Earn Coins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Field" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="Field"]
+custom_minimum_size = Vector2(576, 576)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="Slot1" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot7" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot8" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot9" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot10" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot11" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot12" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot13" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot14" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot15" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot16" type="PanelContainer" parent="Field/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Shop" type="Node2D" parent="."]
+position = Vector2(1472, 0)
+script = ExtResource("10_lsgx4")
+
+[node name="ShopBG" type="Sprite2D" parent="Shop"]
+position = Vector2(256.5, 384)
+scale = Vector2(1.026, 1.06667)
+texture = ExtResource("4_g8qql")
+
+[node name="ShopButton" type="TextureButton" parent="Shop"]
+offset_left = -240.0
+offset_top = 16.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("3_qiwyv")
+texture_hover = ExtResource("4_yuveu")
+
+[node name="ShopText" type="Label" parent="Shop/ShopButton"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 35
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buildings" type="Control" parent="Shop"]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="Shop/Buildings"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 768.0
+
+[node name="building1" type="HBoxContainer" parent="Shop/Buildings/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureButton" type="TextureButton" parent="Shop/Buildings/VB/building1" groups=["Buildings"]]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("4_yuveu")
+texture_hover = ExtResource("4_yuveu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Shop/Buildings/VB/building1/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 20
+text = "Price: 100$
++10 to click"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Buildings/VB/building1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Shop/Buildings/VB/building1/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("8_0wmgo")
+expand_mode = 1
+
+[node name="LabelCount" type="Label" parent="Shop/Buildings/VB/building1/VBoxContainer"]
+layout_mode = 2
+text = "4 left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="building2" type="HBoxContainer" parent="Shop/Buildings/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureButton" type="TextureButton" parent="Shop/Buildings/VB/building2" groups=["Buildings"]]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("4_yuveu")
+texture_hover = ExtResource("4_yuveu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Shop/Buildings/VB/building2/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 20
+text = "Price: 1000$
+x1.5 to click"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Buildings/VB/building2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Shop/Buildings/VB/building2/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("9_bv62e")
+expand_mode = 1
+
+[node name="LabelCount" type="Label" parent="Shop/Buildings/VB/building2/VBoxContainer"]
+layout_mode = 2
+text = "4 left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="building3" type="HBoxContainer" parent="Shop/Buildings/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureButton" type="TextureButton" parent="Shop/Buildings/VB/building3" groups=["Buildings"]]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("4_yuveu")
+texture_hover = ExtResource("4_yuveu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Shop/Buildings/VB/building3/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 20
+text = "Price: 10000$
++100 to CPS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Buildings/VB/building3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Shop/Buildings/VB/building3/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("10_hdqdj")
+expand_mode = 1
+
+[node name="LabelCount" type="Label" parent="Shop/Buildings/VB/building3/VBoxContainer"]
+layout_mode = 2
+text = "4 left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="building4" type="HBoxContainer" parent="Shop/Buildings/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureButton" type="TextureButton" parent="Shop/Buildings/VB/building4" groups=["Buildings"]]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("4_yuveu")
+texture_hover = ExtResource("4_yuveu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Shop/Buildings/VB/building4/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 20
+text = "Price: 100000$
++1000 to CPS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Buildings/VB/building4"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Shop/Buildings/VB/building4/VBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("11_tgg7h")
+expand_mode = 1
+
+[node name="LabelCount" type="Label" parent="Shop/Buildings/VB/building4/VBoxContainer"]
+layout_mode = 2
+text = "4 left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Node2D" parent="."]
+script = ExtResource("12_8jkf5")
+
+[node name="SettingsBG" type="Sprite2D" parent="Settings"]
+position = Vector2(-257, 384)
+scale = Vector2(1.028, 1.06667)
+texture = ExtResource("3_wi3im")
+
+[node name="SettingsButton" type="TextureButton" parent="Settings"]
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 112.0
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("3_qiwyv")
+texture_hover = ExtResource("4_yuveu")
+
+[node name="SettingsText" type="Label" parent="Settings/SettingsButton"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S_VolumeButton" type="TextureButton" parent="Settings"]
+offset_left = -256.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 112.0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("4_yuveu")
+texture_hover = ExtResource("4_yuveu")
+
+[node name="S_VolumeText" type="Label" parent="Settings/S_VolumeButton"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 35
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S_ExitButton" type="TextureButton" parent="Settings"]
+offset_left = -256.0
+offset_top = 656.0
+offset_right = -16.0
+offset_bottom = 752.0
+texture_normal = ExtResource("3_qiwyv")
+texture_pressed = ExtResource("3_qiwyv")
+texture_hover = ExtResource("4_yuveu")
+
+[node name="S_ExitText" type="Label" parent="Settings/S_ExitButton"]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 30
+text = "Exit "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="Clicker/ClickerButton" to="." method="_on_clicker_button_pressed"]
+[connection signal="pressed" from="Shop/ShopButton" to="Shop" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Settings/SettingsButton" to="Settings" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Settings/S_ExitButton" to="." method="_on_s_exit_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
