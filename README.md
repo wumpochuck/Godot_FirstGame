@@ -1,6 +1,6 @@
 # myFirstGodotProject
-This is my first game project on Godot Engine
+ **This is my first game project on Godot Engine**
 
-Simple clicker with upgrades like a buildings
+ Simple clicker with upgrades like a buildings
  
- created together with QuantoPrizm
+> Collaborator -  [QuantoPrizm](https://github.com/QuantoPrizm)
